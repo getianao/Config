@@ -43,16 +43,23 @@ do_mkdir() {
 }
 
 do_git() {
-  git submodule update --init --recursive
-  mkdir -p ~/.vim/bundle
-  if [[ ! -d ~/.vim/bundle/vim-plug ]]; then
-    git clone https://github.com/junegunn/vim-plug ~/.vim/bundle/vim-plug
+#   git submodule update --init --recursive
+#   mkdir -p ~/.vim/bundle
+#   if [[ ! -d ~/.vim/bundle/vim-plug ]]; then
+#      git clone https://github.com/junegunn/vim-plug ~/.vim/bundle/vim-plug
+#   fi
+
+  if [[ ! -d ~/.vim/autoload/plug.vim ]]; then
+     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
+
+
+
 }
 
-do_mkdir
-do_ssh
-do_git
+# do_mkdir
+# do_ssh
 
 for f in "${(@k)dir[@]}"; do
   g="$target/${f/home\//}"
@@ -113,3 +120,5 @@ for f in ${files[@]}; do
     link "$f" "$g"
   fi
 done
+
+do_git
