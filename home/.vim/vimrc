@@ -13,6 +13,7 @@ set tags=./.tags;,.tags
 
 call plug#begin('~/.vim/plugged')
 " Plug 'universal-ctags/ctags'
+Plug 'preservim/nerdtree'
 Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
