@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kien/ctrlp.vim'
+Plug 'simeji/winresizer'
 call plug#end()
 
 so ~/.vim/init.vim
