@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'universal-ctags/ctags'
 Plug 'preservim/nerdtree'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 so ~/.vim/init.vim
