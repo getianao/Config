@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 set -e
 
 files=($(git ls-files | egrep -v 'backup|.ssh|proxy.pac.coffee|weechat'))
@@ -61,7 +61,7 @@ do_git() {
 # do_mkdir
 # do_ssh
 
-for f in "${(@k)dir[@]}"; do
+for f in "${!dir[@]}"; do
   g="$target/${f/home\//}"
   mkdir -p "${g%/*}"
   if ! [[ -L "$g" ]]; then
